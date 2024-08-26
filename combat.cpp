@@ -1,43 +1,12 @@
 #include <iostream>
 #include <string>
 #include <array>
+#include "character.h"
 
 using namespace std;
 
 
-class Character
-{
-    public: 
-    bool isPlayer = false;
-    bool isParty = false;
-    bool isFoe = true;
-    string name = "";
-    int hp = 0;
-    int stamina = 0;
-    int damage = 5;
-    int extraTurn = 0;
-    bool activeTurn = false;
-    
-    void extraTurnCalc()
-{
-    cout<<"Add speed to extra turn";
-    return;
 
-};
-
-void npcTurn()
-{
-    return;
-
-};
-
-void playerTurn()
-{
-    return;
-
-};
-   
-};
 
 
 
@@ -72,7 +41,7 @@ int attack(Character attacker, Character defender)
 
 public: void startCombat(Character combatants[], int turnAmount)
 {
-  
+    cout<<"Your characters are "<< combatants[0].name <<" and, "  <<combatants[1].name;
     return;
 };
 
