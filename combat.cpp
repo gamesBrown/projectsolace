@@ -1,5 +1,6 @@
 #include <iostream>
 #include <string>
+#include <array>
 
 using namespace std;
 
@@ -8,24 +9,55 @@ class Character
 {
     public: 
     bool isPlayer = false;
+    bool isParty = false;
+    bool isFoe = true;
     string name = "";
     int hp = 0;
     int stamina = 0;
     int damage = 5;
+    int extraTurn = 0;
+    bool activeTurn = false;
+    
+    void extraTurnCalc()
+{
+    cout<<"Add speed to extra turn";
+    return;
+
+};
+
+void npcTurn()
+{
+    return;
+
+};
+
+void playerTurn()
+{
+    return;
+
+};
    
 };
 
 
-void displayMenu(Character pc, Character npc, int turnorder)
+
+class Combat 
 {
+    void displayMenu(Character combatants[], int arraySize, int turnorder)
+{
+   
+    for (int i =0; i<arraySize;i++)
+    {
+        continue;
+    }
     cout <<
     "Turn: "<<turnorder<<
-    "Health: "<<pc.hp<<" "<<
-    "Stamina: "<<pc.stamina<<"\n"<<
+    "Health: "<<combatants[0].hp<<" "<<
+    "Stamina: "<<combatants[0].stamina<<"\n"<<
     "[Attack] [Skills]\n"
     "[Items] [Retreat]"
     "\n\n\n\n"
-    <<"Enemy HP: " <<npc.hp<<"\n";
+    <<"Enemy HP: " <<combatants[1].hp<<"\n";
     return;
 };
 
@@ -38,59 +70,17 @@ int attack(Character attacker, Character defender)
 
 
 
-void startCombat(Character pc, Character npc)
+public: void startCombat(Character combatants[], int turnAmount)
 {
-    int turnorder =1;
-    Character lastattack = pc;
-    while (true)
-    {
-          if(pc.hp <=0 && npc.hp <=0)
-        {
-            cout<< lastattack.name<<" has won the battle!";
-            break;
-        }
-        else if  (npc.hp <= 0)
-        {
-            cout<< pc.name<<" has won the battle!";
-            break;
-        }
-        else if  (pc.hp <= 0)
-        {
-            cout<< npc.name<<" has won the battle!";
-            break;
-        }
-        displayMenu(pc,npc, turnorder);
-        cout <<"What would you like to do?\n"; 
-        string input = "";
-        cin >> input;
-        cout <<"Your input was: " + input + "\n";
-        if(input == "attack" ||input == "a"||input == "at")
-        {
-            cout<<"You attack the npc for "<<pc.damage<<" damage!\n";
-            npc.hp = attack(pc,npc);
-            lastattack = pc;
-            
-        }
-        else
-        {
-            cout<<"Your selection was invalid, please try again.\n";
-            continue;
-        }
-
-        cout <<"The enemy attacks you for " << npc.damage <<" damage!\n";
-        pc.hp = attack(npc,pc);
-        lastattack = npc;
-        turnorder+=1;
-
-      
-       
-        
-        
-    
-        
-    }
+  
     return;
-}
+};
+
+};
+
+
+
+
 
 /* class Npc
 {
@@ -111,6 +101,7 @@ void startCombat(Character pc, Character npc)
 }; */
 int main()
 {
+    Combat combat = Combat();
     Character pc = Character();
     pc.hp = 25;
     pc.stamina = 25;
@@ -122,7 +113,9 @@ int main()
     npc.damage = 3;
     npc.name = "Edmund";
 
+    Character character[] = {pc,npc};
 
-    startCombat(pc,npc);
+
+    combat.startCombat(character,1);
     return 0;
 }
