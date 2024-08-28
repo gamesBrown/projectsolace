@@ -12,7 +12,7 @@ using namespace std;
 
 class Combat 
 {
-    void displayMenu(Character combatants[], int arraySize, int turnorder)
+    void displayMenu(Character combatants[], int arraySize, int turnCount)
 {
    
     for (int i =0; i<arraySize;i++)
@@ -20,7 +20,7 @@ class Combat
         continue;
     }
     cout <<
-    "Turn: "<<turnorder<<
+    "Turn: "<<turnCount<<
     "Health: "<<combatants[0].hp<<" "<<
     "Stamina: "<<combatants[0].stamina<<"\n"<<
     "[Attack] [Skills]\n"
@@ -30,20 +30,24 @@ class Combat
     return;
 };
 
-int attack(Character attacker, Character defender)
-{
-    defender.hp -= attacker.damage;
-    return defender.hp;
-
-};
 
 
 
-public: void startCombat(Character combatants[], int turnAmount)
+public: void startCombat(Character combatants[], int turnCounter)
 {
     cout<<"Your characters are "<< combatants[0].name <<" and, "  <<combatants[1].name;
     return;
 };
+    Character* rollInitiative(Character combatants[], int arraySize)
+    {
+        
+        Character turnOrder[arraySize];
+        for (int i=1;i<=arraySize;i++)
+        {
+
+        }
+        return turnOrder;
+    }
 
 };
 

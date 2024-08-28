@@ -23,4 +23,12 @@ using namespace std;
     return;
 
 };
+
+int Character::attack(Character attacker, Character defender)
+{
+    //Need to change to where the character damages itself if the attack succeeds
+    defender.hp -= attacker.damage;
+    return defender.hp;
+
+};
    

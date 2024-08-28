@@ -23,5 +23,6 @@ class Character
     void npcTurn();
 
     void playerTurn();
+    int attack(Character attacker, Character defender);
 
 };
