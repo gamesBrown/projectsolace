@@ -1,10 +1,22 @@
 #include <iostream>
+#include <string>
 #include "character.h"
 
 using namespace std;
 
 
-   
+    Character::Character()
+{
+        name = "Edmund";
+        return;
+}
+    
+    Character::Character(std::string n)
+{
+        name = n;
+        return;
+}
+    
     void Character::extraTurnCalc()
 {
     cout<<"Add speed to extra turn";

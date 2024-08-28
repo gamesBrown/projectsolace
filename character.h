@@ -8,7 +8,6 @@ class Character
 {
 
     public: 
-    bool isPlayer;
     bool isParty;
     bool isFoe;
     std::string name;
@@ -17,7 +16,8 @@ class Character
     int damage;
     int extraTurn;
     bool activeTurn;
-    
+    Character();
+    Character(std::string n);
     void extraTurnCalc();
 
     void npcTurn();
